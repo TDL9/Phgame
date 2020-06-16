@@ -1,0 +1,44 @@
+心血来潮做个游戏，但是做什么呢？
+
+
+左侧 capslock 没什么用
+组合快捷键不方便
+单边小括号
+着重于3*12 planck区域
+
+
+屏幕和图片都是 surface
+
+初始化：
+import pygame
+from pygame.locals import *
+
+screen = pygame.display.set_mode( (width,height) )
+// safe to call the init() function for any module more than once.
+// "pygame.init()", silently fail. hand initializing modules raise an exception.
+
+绘图
+screen.fill(color)
+screen.blit(pic, pos_rect /*just use top left*/ ) //point would be top-left
+
+pygame.display.flip()
+pygame.display.update() ?
+
+Rect (left, top, width, height)
+
+Surface().convert() // 转换格式，非python注意内存泄漏
+
+event loop:
+for event in pygame.event.get():
+        if event.type == pygame.QUIT: sys.exit()
+
+运动
+ballrect.move(speed)
+
+(0,0)      (w-1,0)
+(0,h-1)    (w-1,h-1)
+
+display.update()可区域更新？
+pygame.examples
+
+
